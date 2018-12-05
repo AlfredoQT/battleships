@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Battleship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Risque" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Splash screen -->
+    <section id="splash-screen">
+        <div class="center-hv h-inherit">
+            <div class="text-center">
+                <h1 class="text-primary mb-5">Welcome to Battleship!</h1>
+                <button id="close-splash" class="btn d-block mx-auto mb-4">Start Game</button>
+                <select id="difficulty-selector" class="slt d-block mx-auto mb-4">
+                    <option value="EASY">Easy</option>
+                    <option value="MEDIUM" selected>Medium</option>
+                    <option value="HARD">Hard</option>
+                    <option value="LEGENDARY">Legendary</option>
+                </select>
+                <button id="reveal-credits" class="btn d-block mx-auto">Credits</button>
+            </div>
+        </div>
+    </section>
+    <!--Main game screen -->
+    <section id="game-screen">
+        <div class="pos-relative h-inherit">
+            <nav class="row-space-between p-4">
+                <h2 class="text-primary">Battleship</h2>
+                <ul class="game-options row-flex-end text-secondary">
+                    <li><a id="new-game" href="#">Reset Game</a></li>
+                    <!-- Uncomment this if you want to play with same placement again (cheating :D)
+                    <li><a id="reset-game" href="#">Reset</a></li>
+                    -->
+                    <li><a id="close-game" href="#">Top Scores</a></li>
+                    <li><a id="end-game" href="#">Exit</a></li>
+                </ul>
+            </nav>
+            <!-- Contains board, and user feedback elements -->
+            <main>
+                <h3 class="text-secondary mb-4 px-4">Score: <span id="player-score">0</span></h3>
+                <div class="row-space-around">
+                    <!-- Board -->
+                    <div id="game-area" class="fb-7 row-center"></div>
+                    <div class="fb-3">
+                        <h3 class="text-secondary mb-3">Missiles Left: <span id="player-hits">0</span></h3>
+                        <h3 class="text-secondary mb-3">Ships:</h3>
+                        <!-- Information of ships' state -->
+                        <div id="ship-info">
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="place-bottom">
+                <p class="text-center text-tertiary">By Alfredo Quintero Tlacuilo</p>
+            </footer>
+        </div>
+    </section>
+    <!-- Shows high scores -->
+    <section id="scores-screen">
+        <div class="center-hv h-inherit pos-relative">
+            <span id="close-scores" class="close-screen">&#10006;</span>
+            <div class="text-center">
+                <h2 class="text-primary mb-4">Top Scores</h2>
+                <ol id="top-scores-area" class="text-secondary">
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- Shows the user a game over screen -->
+    <section id="end-screen">
+        <div class="center-hv h-inherit pos-relative">
+            <div class="text-center">
+                <h2 id="end-message" class="text-primary mb-4"></h2>
+                <h3 id="high-score-message" class="text-secondary mb-4"></h3>
+                <h3 class="text-secondary mb-4">Final Score: <span id="end-score"></span></h3>
+                <button id="close-end--new" class="btn">New Game</button>
+                <button id="close-end--exit" class="btn">Exit</button>
+            </div>
+        </div>
+    </section>
+    <!-- Credits for game -->
+    <section id="credits-screen">
+        <div class="center-hv h-inherit pos-relative">
+            <span id="close-credits" class="close-screen">&#10006;</span>
+            <div class="text-center">
+                <h2 class="text-primary mb-5">Game Credits</h2>
+                <div>
+                    <h3 class="text-secondary">Game Menu Theme</h3>
+                    <div class="text-tertiary">
+                        <p>"Minstrel Guild" Kevin MacLeod (incompetech.com)</p>
+                        <p>Licensed under Creative Commons: By Attribution 3.0 License</p>
+                        <p>http://creativecommons.org/licenses/by/3.0/</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-secondary">Game Lost Theme</h3>
+                    <div class="text-tertiary">
+                        <p>"Song of the Volga Boatmen" Kevin MacLeod (incompetech.com)</p>
+                        <p>Licensed under Creative Commons: By Attribution 3.0 License</p>
+                        <p>http://creativecommons.org/licenses/by/3.0/</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-secondary">Game Won Theme</h3>
+                    <div class="text-tertiary">
+                        <p>"The Rule" Kevin MacLeod (incompetech.com)</p>
+                        <p>Licensed under Creative Commons: By Attribution 3.0 License</p>
+                        <p>http://creativecommons.org/licenses/by/3.0/</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Libraries required for the game -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/store.everything.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.core.min.js"></script>
+    <!-- Custom scripts for the game -->
+    <script src="scripts/scorehandler.js"></script>
+    <script src="scripts/square.js"></script>
+    <script src="scripts/ship.js"></script>
+    <script src="scripts/fleet.js"></script>
+    <script src="scripts/gamemap.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

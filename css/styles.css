@@ -1,0 +1,364 @@
+/* 1 rem = 10px, 10px/16px = 62.5% */
+html {
+    font-size: 62.5%;
+}
+
+/* So that elements border and padding are not added to total width and height */
+body {
+    box-sizing: border-box;
+    font-family: 'Risque', sans-serif;
+    /* Remove default margin */
+    margin: 0;
+    /* default color */
+    color: white;
+}
+
+/* The height of each section should be 100% of viewport height to cover all screen */
+section {
+    height: 100vh;
+}
+
+/* Remove padding-start and margin default property, don't know why they put it there */
+ul, ol {
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+/* Remove some default styles for headers (found on inspector) */
+h1, h2, h3 {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+/*********************/
+/*                   */
+/*     Utilities     */
+/*                   */
+/*********************/
+
+/* Display an element */
+.show {
+    display: block;
+}
+
+/* Hide an element */
+.hide {
+    display: none;
+}
+
+/* Inherit width */
+.w-inherit {
+    width: inherit;
+}
+
+/* Inherit height */
+.h-inherit {
+    height: inherit;
+}
+
+/* Set position relative on an element */
+.pos-relative {
+    position: relative;
+}
+
+/* Create a row, with equal space between items */
+.row-space-between {
+    display: flex;
+    /* Display all items on one row */
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+/* Create a row, with equal space around items */
+.row-space-around {
+    display: flex;
+    /* Display all items on one row */
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+/*Create a row, and justify contents to the left*/
+.row-flex-end {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+/* Create a row, and justify contents to center */
+.row-center {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/* Utility class for centering both vertically and horizontally */
+.center-hv{
+    display: flex;
+    /* Horizontal alignment */
+    justify-content: center;
+    /* Vertical alignment */
+    align-items: center;
+}
+
+/* Utility class for centering text */
+.text-center {
+    text-align: center;
+}
+
+/* Place an item on bottom, needs position relative on parent */
+.place-bottom {
+    position: absolute;
+    bottom: 0;
+    /* Otherwise, width shrinks to fit contents */
+    width: 100%;
+}
+
+/* Center a block element on x */
+.mx-auto {
+    margin: 0 auto;
+}
+
+/* Extra small margin bottom */
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+/* Medium margin bottom */
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+/* Medium margin bottom */
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+/* Large margin bottom */
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+/* Extra large margin bottom */
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+/* Large padding */
+.p-4 {
+    padding: 1.5rem;
+}
+
+/* Large padding on x */
+.px-4 {
+    padding: 0 1.5rem;
+}
+
+/* Applies display block on element */
+.d-block {
+    display: block;
+}
+
+/* Sets main initial size of a flex item to 30% */
+.fb-3 {
+    flex-basis: 30%;
+}
+
+/* Sets main initial size of a flex item to 70% */
+.fb-7 {
+    flex-basis: 70%;
+}
+
+/*********************/
+/*                   */
+/*     Components    */
+/*                   */
+/*********************/
+
+/* Style the button for closing a section, needs position relative on parent */
+.close-screen {
+    position: absolute;
+    /* Position on the top-right corner of parent */
+    top: 0;
+    right: 0;
+    padding: 3rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+/* Default style for button */
+.btn {
+    background-color: white;
+    color: black;
+    padding: 1.8rem;
+    border: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: 'Risque', sans-serif;
+    letter-spacing: 0.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+/* Style a select tag */
+.slt {
+    background-color: white;
+    color: black;
+    padding: 1.5rem;
+    border: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: 'Risque', sans-serif;
+    letter-spacing: 0.2rem;
+    border-radius: 2rem;
+}
+
+/*********************/
+/*                   */
+/*     Typography    */
+/*                   */
+/*********************/
+
+.text-primary {
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+}
+
+.text-secondary {
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+}
+
+.text-tertiary {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+}
+
+/*********************/
+/*                   */
+/*   Splash Screen   */
+/*                   */
+/*********************/
+
+/* Styles for splash screen section */
+section#splash-screen {
+    /* Centered an fixed background */
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    /* Resize image to cover whole container */
+    background-size: cover;
+}
+
+/*********************/
+/*                   */
+/*    Game Screen    */
+/*                   */
+/*********************/
+
+/* Styles for game screen section */
+section#game-screen {
+    /* Centered an fixed background */
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    /* Resize image to cover whole container */
+    background-size: cover;
+}
+
+/* Remove some default styles from game options */
+ul.game-options {
+    /* Remove those bullet points */
+    list-style: none;
+    margin: 0;
+}
+
+/* Style anchor tags from ul */
+ul.game-options a {
+    text-decoration: none;
+    padding: 1rem;
+    /* Otherwise, padding would not be on top as well */
+    display: block;
+    color: inherit;
+}
+
+/* Set some styles on table */
+.game-board {
+    border: 1px solid black;
+    width: 45rem;
+    height: 45rem;
+    /* Remove some default styles */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Make each cell 10% width and height (10x10) */
+.game-board .cell {
+    width: 10%;
+    height: 10%;
+    border: 1px solid black;
+}
+
+/* Default cell modifier */
+.game-board .cell--default {
+    background-color: #ffffff;
+}
+
+/* Default cell modifier */
+.game-board .cell--ocean {
+    background-color: #add8e6;
+}
+
+/* Default cell modifier */
+.game-board .cell--ship {
+    background-color: #d2691e;
+}
+
+/* Default cell modifier */
+.game-board .cell--sunk {
+    background-color: #b22222;
+}
+
+/* Remove styles from list */
+ul.ship-list {
+    list-style: none;
+}
+
+/* Represents a heart to fit in a span */
+.heart {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.3rem;
+}
+
+/* Changes background for a full heart */
+.heart--fill {
+    background-image: url(../images/heart-fill.png);
+}
+
+/* Changes background for a damaged heart */
+.heart--contour {
+    background-image: url(../images/heart-contour.png);
+}
+
+/*********************/
+/*                   */
+/*   Scores Screen   */
+/*                   */
+/*********************/
+
+/* Background color for scores screen */
+section#scores-screen {
+    background-color: #464675;
+}
+
+/*********************/
+/*                   */
+/*  Credits Screen   */
+/*                   */
+/*********************/
+
+/* Background color for credits screen */
+section#credits-screen {
+    background-color: #01a3a4;
+}
